@@ -1,5 +1,6 @@
 # Node.js with Angular
 
+
 # Build a Node.js project that uses Angular.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -15,7 +16,12 @@ steps:
   inputs:
     versionSpec: '14.x'
   displayName: 'Install Node.js'
-
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '\\sanchezm1.corp.aspentech.com\share\Current'
+    CleanTargetFolder: true
+    OverWrite: true
 - script: |
     npm install -g @angular/cli
     npm install
