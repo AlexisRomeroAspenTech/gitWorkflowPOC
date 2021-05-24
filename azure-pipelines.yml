@@ -30,7 +30,7 @@ steps:
     OverWrite: true
 - task: AzureFileCopy@4
   inputs:
-    SourcePath: '*'
+    SourcePath: 'Build.Repository.LocalPath'
     azureSubscription: 'WorkFlowPOC'
     Destination: 'AzureBlob'
     storage: 'pocversionrepo'
