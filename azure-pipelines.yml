@@ -28,3 +28,8 @@ steps:
     TargetFolder: '\\sanchezm1.corp.aspentech.com\share\Current'
     CleanTargetFolder: true
     OverWrite: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
