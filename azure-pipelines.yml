@@ -28,3 +28,10 @@ steps:
     TargetFolder: '\\sanchezm1.corp.aspentech.com\share\Current'
     CleanTargetFolder: true
     OverWrite: true
+- task: AzureFileCopy@4
+  inputs:
+    SourcePath: '*'
+    azureSubscription: 'WorkFlowPOC'
+    Destination: 'AzureBlob'
+    storage: 'pocversionrepo'
+    ContainerName: 'current'
